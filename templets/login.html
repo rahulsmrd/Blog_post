@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Please LogIn !!</h1>
+
+{% if form.error %}
+    <p>Your username and password doesn't match. Please try again</p>`
+    {% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-outline-success">LogIn</button>
+
+</form>
+
+{% endblock %}

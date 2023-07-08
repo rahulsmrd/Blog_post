@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Please Login :</h1>
+    <h3>(Must be a SuperUser, please check with the site admin)</h3>
+
+    {% if form.error %}
+    <p>Your username and password doesn't match. Please try again</p>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <input type="hidden" name="next" value="{{next}}">
+
+    </form>
+</div>
+
+{% endblock %}

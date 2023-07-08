@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {% for posts in post %}
+    
+        {%if not posts.published_date %}
+
+        <div class="container">
+            <p>Created : {{posts.created_date}}</p>
+            <h1><a href="{% url 'post_detail' post.pk%}">{{ post.title }}</a></h1>
+            <p>{{ post.text }}</p>
+        </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock body %}

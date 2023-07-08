@@ -1,0 +1,22 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color_change {
+  color:black;
+  font-weight:bold;
+  animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+  0% {background-color: rgb(255, 164, 164);}
+  25%{background-color:rgb(241, 241, 85);}
+  50%{background-color:rgb(5, 161, 5);}
+  75%{background-color:rgb(203, 18, 240);}
+  100% {background-color: rgb(255, 164, 164);}
+}
