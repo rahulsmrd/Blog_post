@@ -2,7 +2,6 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.shortcuts import render,get_object_or_404,redirect
-from django.utils import timezone
 from django.urls import reverse_lazy,reverse
 from blog_app.models import *
 from blog_app.forms import *
