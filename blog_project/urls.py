@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views
+from django.conf import settings
 from blog_app import views
 
 urlpatterns = [
@@ -25,3 +26,8 @@ urlpatterns = [
     path('logout/', views.logout_req, name='logout'),
     path('register/', views.register, name='register')
 ]
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns=[
+        path('__debug__/', include(debug_toolbar.urls))
+    ]+urlpatterns
